@@ -1,60 +1,12 @@
 <template>
   <div id="app">
-    <headerTop/>
-    <addtodo/>
-    <ToDos v-bind:todos="todos"  v-on:del-todo="deleteTodo"/>
- 
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view/>
   </div>
 </template>
-
-<script>
- import ToDos from './components/Todos.vue';
- import headerTop from './components/layouts/headerTop.vue';
- import addtodo from './components/addtodo.vue';
-
-export default {
-  name: 'app',
-  components: {
-    headerTop,
-    ToDos,
-    addtodo
-
-   
-  },
-  data()
-  {
-    return {
-      todos:
-      [
-        {
-          id:1,
-          title:"Todo One",
-          completed:true
-        },
-         {
-          id:2,
-          title:"Todo Two",
-          completed:true
-        },
-         {
-          id:3,
-          title:"Todo Three",
-          completed:false
-        }
-      ],
-      msg:'Hellow'
-    }
-  },
-  methods:{
-    deleteTodo(id)
-    {
-      this.todos=this.todos.filter(todo=>todo.id!=id);
-
-    }
-  }
-  
-}
-</script>
 
 <style> 
 * {

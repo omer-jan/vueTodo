@@ -1,5 +1,4 @@
  
-    
 <template>
   <div>
     <form @submit="addTodo">
@@ -12,7 +11,7 @@
 <script>
 // import uuid from 'uuid';
 export default {
-  name: "AddTodo",
+  name: "addtodo",
   data() {
     return {
       title: ''
@@ -22,6 +21,7 @@ export default {
     addTodo(e) {
       e.preventDefault();
       const newTodo = {
+      //    id:uuid.v4(),
         title: this.title,
         completed: false
       }
